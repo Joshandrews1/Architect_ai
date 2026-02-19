@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Abstract network of glowing nodes representing AI and connectivity.",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956233-b8f1803411d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzY5NzU0OTAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract network"
+    },
+    {
+      "id": "founder",
+      "description": "Portrait of a founder, looking thoughtful and professional.",
+      "imageUrl": "https://images.unsplash.com/photo-1765438869321-d60141efd813?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb3VuZGVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwMDA3MTk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "founder portrait"
+    },
+    {
+      "id": "about-hero-portrait",
+      "description": "Monochromatic portrait of a man, used as the hero image on the 'Sovereign' about page.",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5076560547-823b0.firebasestorage.app/o/Gemini_Generated_Image_yx7oqzyx7oqzyx7o.png?alt=media&token=faa23ed2-8194-4b99-9161-fbae811f765d",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "about-vision-image",
+      "description": "High-tech vision image for the about page.",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5076560547-823b0.firebasestorage.app/o/ai%20avater%20image.png?alt=media&token=e3b64d24-de60-475e-a96d-a9963505d333",
+      "imageHint": "tech vision"
+    },
+    {
+      "id": "hp-user-avatar",
+      "description": "User profile avatar for homepage header.",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuD1ji5Fd-GtblP6h0NtFbEK3qL0JMSI6GV6FAhrHjg4mu6hQ_eITZFuf_ZD9IUo75ELzfk6QJaBVE_FJl14YAhabGqKEcrgHD0YhGRNq24bZnZWxM6rGpV0cvbfQf4JwcjXCXBfdVyBMB76ws0V5A2PXXStvCf7GZEAKoLtQE7BHWMAB4c2t-kdLs7ze_rCX9cIDmv-78HYsCMjQBoAvQmM6C3XZcKnPKBYr5Li_zBRZyOobfoJ9MI422DLe8QQl1KVgFRBy8QX4SA",
+      "imageHint": "user avatar"
+    },
+    {
+      "id": "hp-bento-audit",
+      "description": "Digital brain visualization for AI-powered audit.",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5076560547-823b0.firebasestorage.app/o/Gemini_Generated_Image_6smb8i6smb8i6smb.png?alt=media&token=20026ad3-b769-4446-9f39-0d3a8c7f9471",
+      "imageHint": "digital brain"
+    },
+    {
+      "id": "hp-bento-chat-avatar",
+      "description": "AI Consultant Avatar 'Web Architect'",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBw_67zLnhabSOnz2TWgqtDARDC1Yw_fuspPCDMP3PGnJMkoadZUxhQNAzkdPWmp1-IBBtUyaN0Q3EB7Z3NwdnJDIYyW7pdljTDLjFgEpB3wzpEqM1LZxe-p19gnbhXqgWWKtF_jv99rvZhsju76g7IW52ApUJ1fi67RKYA_6BbrtY1vOmnJQkfJdJBy6KURyIHAulQmq1PyG89anh2C7ITdjy9qExSqIeNwhxWYcwJVLLtJY9YyPnZUlIsYFXBlOTDRwwo2xkxUZ8",
+      "imageHint": "ai avatar"
+    },
+    {
+      "id": "hp-blog-1",
+      "description": "Futuristic AI technology abstract visualization.",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAc7fjIkKvgCVij9iaQPfBRtEQope8vcWnV2zf8_B-Ju33qu0pNNnETQSLB0lKz-17WbhPeJF6LNeM3RqxBp3sO-nMB_u4fyXCwGrXmFE_YjyPCFVQ_ceziIsPhWtnBa1GzW9bgDfPQNmhtQEOkud5B7Ahc5HtOaJheWVqjKLKpU24kBSjjfMeN9xgHekExboa5ZWEVNyA_DTtFV82pRkrLnTyKVrSfeIwoJ-mKRrJ-tbOsj3Kk11W2Ia4IIfGrT7pvEpDDTKbKNjY",
+      "imageHint": "ai technology"
+    },
+    {
+      "id": "hp-blog-2",
+      "description": "Satellite imagery of Earth networking and cloud infrastructure.",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfJ0TdpwqmOb8Z7ay5hKUwupjP5yyehMEZOfqQYmRLS4A_nMy_H70_9_6qajf-CbdKCjHH1ibvtcNP8anDa00IKpBUi2Z0M8UXp_Qaypppd6h_6qnpSrQNAi2AU4J8Y0ZO4-f4vWnakZgUJRz-yaZlkD3ci-iPGolbxfkx_ih_oLWEH20xWUEVmZv9eWi-hNDPu8cosYINaMdfFu487yQXu3JO8zCXR_omMXekNUsnHL5iqLYQIOkGkUOgbUtAhpO6CS54cHgapi8",
+      "imageHint": "cloud infrastructure"
+    },
+    {
+      "id": "hp-blog-3",
+      "description": "Abstract block chain architecture design.",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAL8KrLq9bxE1m6GlxaY4iCI4MLlWkVwfG5tmSbuWgxcpoGu2kFHAJXHwBg86tVCRrTLMvg2toj7IXUc1iSCMqX9qDu0i6BTcrFloCpPb1CQC59WwG1gcLd3tNBjxVP1BKZe6P4FD_owXU-NdtLckmwbkinuhoxZUlmB9M7GeSbyFo7ALzq4L3Te7z9fPUbVRsm15qyRibISPIrFhX0Qw46oBH0TKEYLQe34cIzRdFWYzcZL7PELYuNSdraX4UMkB1g4AakablC8-M",
+      "imageHint": "blockchain architecture"
+    },
+    {
+      "id": "hp-blog-4",
+      "description": "Abstract visualization of gears and processes for efficiency.",
+      "imageUrl": "https://images.unsplash.com/photo-1762859731349-c9ff2808b672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhdXRvbWF0aW9uJTIwZWZmaWNpZW5jeXxlbnwwfHx8fDE3NzAwNTEyNTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automation efficiency"
+    },
+    {
+      "id": "hp-blog-5",
+      "description": "A strong and unique brand logo glowing.",
+      "imageUrl": "https://images.unsplash.com/photo-1590102425712-1c28a0d6b85b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxicmFuZCUyMGlkZW50aXR5fGVufDB8fHx8fDE3NzAwNTEyNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "brand identity"
+    },
+    {
+      "id": "hp-blog-6",
+      "description": "A complex dashboard showing data analytics.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMGFuYWx5dGljc3xlbnwwfHx8fDE3NzAwMTQxMjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data analytics"
+    },
+    {
+      "id": "live-assistant-avatar",
+      "description": "Professional and friendly portrait of a customer support specialist.",
+      "imageUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI4MzQ2OTg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "support avatar"
+    }
+  ]
+}

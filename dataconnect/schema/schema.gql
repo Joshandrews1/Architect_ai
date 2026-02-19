@@ -1,0 +1,46 @@
+type User @table {
+  email: String!
+  displayName: String!
+  createdAt: Timestamp!
+  companyName: String
+  industry: String
+  phoneNumber: String
+}
+
+type BusinessProfile @table {
+  user: User!
+  name: String!
+  websiteUrl: String!
+  createdAt: Timestamp!
+  description: String
+  targetAudience: String
+}
+
+type GrowthAudit @table {
+  businessProfile: BusinessProfile!
+  requestedAt: Timestamp!
+  status: String!
+  reportSummary: String
+  detailedReportUrl: String
+  completedAt: Timestamp
+}
+
+type StrategySession @table {
+  user: User!
+  growthAudit: GrowthAudit
+  sessionDateTime: Timestamp!
+  status: String!
+  createdAt: Timestamp!
+  expertNotes: String
+  clientNotes: String
+  meetingLink: String
+}
+
+type Recommendation @table {
+  growthAudit: GrowthAudit!
+  category: String!
+  description: String!
+  priority: Int!
+  impactScore: Int
+  effortScore: Int
+}

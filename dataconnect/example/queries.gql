@@ -1,0 +1,30 @@
+mutation CreateBusinessProfile($userId: UUID!, $name: String!, $websiteUrl: String!, $createdAt: Timestamp!, $description: String, $targetAudience: String) @auth(level: USER) {
+  businessProfile_insert(data: {userId: $userId, name: $name, websiteUrl: $websiteUrl, createdAt: $createdAt, description: $description, targetAudience: $targetAudience})
+}
+
+query ListRecommendationsForGrowthAudit($growthAuditId: UUID!) @auth(level: USER) {
+  recommendations(where: {growthAuditId: {eq: $growthAuditId}}) {
+    id
+    category
+    description
+    effortScore
+    impactScore
+    priority
+  }
+}
+
+mutation UpdateStrategySessionClientNotes($id: UUID!, $clientNotes: String) @auth(level: USER) {
+  strategySession_update(key: {id: $id}, data: {clientNotes: $clientNotes})
+}
+
+query GetUserByEmail($email: String!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  users(where: {email: {eq: $email}}) {
+    id
+    displayName
+    email
+    phoneNumber
+    companyName
+    industry
+    createdAt
+  }
+}

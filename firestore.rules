@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- User-Owned Subcollections ---
+
+    // Rules for the webAudits collection
+    match /users/{userId}/webAudits/{webAuditId} {
+      allow get, create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+    match /users/{userId}/webAudits {
+      allow list: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Rules for the socialMediaAudits collection
+    match /users/{userId}/socialMediaAudits/{socialAuditId} {
+      allow get, create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+    match /users/{userId}/socialMediaAudits {
+      allow list: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Rules for the automationTasks collection
+    match /users/{userId}/automationTasks/{automationTaskId} {
+      allow get, create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+    match /users/{userId}/automationTasks {
+      allow list: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // --- Public "Dropbox" Collections ---
+    
+    // Anyone can submit a growth roadmap request.
+    // No one can read or modify them from the client-side.
+    match /growthRoadmapRequests/{growthRoadmapRequestId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+  }
+}

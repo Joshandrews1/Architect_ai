@@ -1,0 +1,78 @@
+mutation CreateSeedData @transaction @auth(level: PUBLIC, insecureReason: "This mutation is used to populate the database with seed data and is not intended for production use.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      displayName: "demouser1",
+      email: "demouser1@example.com",
+      createdAt: "2024-04-26T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      displayName: "demouser2",
+      email: "demouser2@example.com",
+      createdAt: "2024-04-26T00:00:00Z"
+    }
+  ])
+  businessProfile_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      name: "demobusiness1",
+      createdAt: "2024-04-26T00:00:00Z",
+      websiteUrl: "https://example.com"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      name: "demobusiness2",
+      createdAt: "2024-04-26T00:00:00Z",
+      websiteUrl: "https://example.com"
+    }
+  ])
+  growthAudit_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      businessProfileId: "650e8400-e29b-41d4-a716-446655440000",
+      requestedAt: "2024-04-26T00:00:00Z",
+      status: "requested"
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      businessProfileId: "650e8400-e29b-41d4-a716-446655440001",
+      requestedAt: "2024-04-26T00:00:00Z",
+      status: "requested"
+    }
+  ])
+  recommendation_insertMany(data: [
+    {
+      id: "850e8400-e29b-41d4-a716-446655440000",
+      growthAuditId: "750e8400-e29b-41d4-a716-446655440000",
+      category: "SEO",
+      description: "Optimize website for search engines",
+      priority: 1
+    },
+    {
+      id: "850e8400-e29b-41d4-a716-446655440001",
+      growthAuditId: "750e8400-e29b-41d4-a716-446655440001",
+      category: "Social Media",
+      description: "Increase social media presence",
+      priority: 2
+    }
+  ])
+  strategySession_insertMany(data: [
+    {
+      id: "950e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      sessionDateTime: "2024-05-01T10:00:00Z",
+      createdAt: "2024-04-27T00:00:00Z",
+      status: "scheduled"
+    },
+    {
+      id: "950e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      sessionDateTime: "2024-05-02T11:00:00Z",
+      createdAt: "2024-04-27T00:00:00Z",
+      status: "scheduled"
+    }
+  ])
+}

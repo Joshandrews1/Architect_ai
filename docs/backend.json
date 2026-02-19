@@ -1,0 +1,257 @@
+{
+  "entities": {
+    "WebAudit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "WebAudit",
+      "type": "object",
+      "description": "Represents the result of an AI-powered web audit, analyzing a URL.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the web audit."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL analyzed.",
+          "format": "uri"
+        },
+        "auditResult": {
+          "type": "object",
+          "description": "The full JSON result from the web audit AI flow.",
+          "properties": {
+            "summary": { "type": "string" },
+            "scores": {
+              "type": "object",
+              "properties": {
+                "seo": { "type": "number" },
+                "clarity": { "type": "number" },
+                "cta": { "type": "number" },
+                "mobile": { "type": "number" }
+              },
+              "required": ["seo", "clarity", "cta", "mobile"]
+            },
+            "strengths": { "type": "array", "items": { "type": "string" } },
+            "weaknesses": { "type": "array", "items": { "type": "string" } },
+            "blueprint": {
+              "type": "object",
+              "properties": {
+                "now": { "type": "string" },
+                "next": { "type": "string" },
+                "later": { "type": "string" }
+              },
+              "required": ["now", "next", "later"]
+            },
+            "testing": { "type": "string" }
+          },
+          "required": ["summary", "scores", "strengths", "weaknesses", "blueprint", "testing"]
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "The date and time when the audit was performed.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "auditResult",
+        "timestamp"
+      ]
+    },
+    "SocialMediaAudit": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SocialMediaAudit",
+      "type": "object",
+      "description": "Represents the result of an AI-powered social media audit.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the social media audit."
+        },
+        "url": {
+          "type": "string",
+          "description": "The social media profile URL analyzed.",
+          "format": "uri"
+        },
+        "auditResult": {
+          "type": "object",
+          "description": "The full JSON result from the social media audit AI flow."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "The date and time when the audit was performed.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "auditResult",
+        "timestamp"
+      ]
+    },
+    "AutomationTask": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AutomationTask",
+      "type": "object",
+      "description": "Represents a simulated automation task and its status updates.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the automation task."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the automation task."
+        },
+        "statusUpdates": {
+          "type": "array",
+          "description": "A list of status updates for the automation task.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "startTime": {
+          "type": "string",
+          "description": "The date and time when the task started.",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "The date and time when the task ended (or null if still running).",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "statusUpdates",
+        "startTime"
+      ]
+    },
+    "GrowthRoadmapRequest": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "GrowthRoadmapRequest",
+      "type": "object",
+      "description": "Represents a request for a growth roadmap submitted via the contact form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the roadmap request."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the person requesting the roadmap."
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the person requesting the roadmap.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message included with the roadmap request."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "The date and time when the request was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "message",
+        "timestamp"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}/webAudits/{webAuditId}",
+        "definition": {
+          "entityName": "WebAudit",
+          "schema": {
+            "$ref": "#/backend/entities/WebAudit"
+          },
+          "description": "Stores the results of AI-powered web audits for each user. Path-based ownership ensures only the authenticated user can access their own audit history.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "webAuditId",
+              "description": "The unique identifier of the web audit."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/socialMediaAudits/{socialAuditId}",
+        "definition": {
+          "entityName": "SocialMediaAudit",
+          "schema": {
+            "$ref": "#/backend/entities/SocialMediaAudit"
+          },
+          "description": "Stores the results of AI-powered social media audits for each user.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "socialAuditId",
+              "description": "The unique identifier of the social media audit."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/automationTasks/{automationTaskId}",
+        "definition": {
+          "entityName": "AutomationTask",
+          "schema": {
+            "$ref": "#/backend/entities/AutomationTask"
+          },
+          "description": "Stores automation tasks for each user. Path-based ownership ensures only the authenticated user can access their own task data.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "automationTaskId",
+              "description": "The unique identifier of the automation task."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/growthRoadmapRequests/{growthRoadmapRequestId}",
+        "definition": {
+          "entityName": "GrowthRoadmapRequest",
+          "schema": {
+            "$ref": "#/backend/entities/GrowthRoadmapRequest"
+          },
+          "description": "Stores requests for growth roadmaps submitted via the contact form. Security rules can be configured to restrict access to admin users only.",
+          "params": [
+            {
+              "name": "growthRoadmapRequestId",
+              "description": "The unique identifier of the growth roadmap request."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "This Firestore structure is designed to support the Architect AI application's features while adhering to the principles of Authorization Independence, Structural Segregation, and Access Modeling. It leverages path-based ownership for user-related data and a dedicated collection for global roles (if needed in the future). Each collection is designed with homogeneous security requirements in mind to simplify security rules and prevent the need for complex filtering within rules.\n\n**Authorization Independence:** Each collection that requires user-based authorization utilizes path-based ownership (`/users/{userId}/...`). This eliminates the need for `get()` calls in security rules to verify ownership. All writes and reads are scoped to the authenticated user's ID, ensuring data is only accessible by its owner.\n\n**Structural Segregation:** The data is segregated based on its security requirements. User-specific data like `WebAudit` and `AutomationTask` are stored within the `/users/{userId}` path, ensuring that only the authenticated user has access. Data collected from the contact form, such as `GrowthRoadmapRequest`, is stored in a dedicated collection, allowing for different security rules (e.g., only accessible by admins). This avoids mixing data with varying access needs in a single collection.\n\n**QAPs (Rules are not Filters):** The structure supports secure `list` operations by ensuring that all documents within a collection share the same security posture. For example, listing documents in `/users/{userId}/webAudits` only returns the audits belonging to the authenticated user. The structure provides Authorization Independence, which minimizes the need to filter data on the client side.\n\n**Invariants:** The structure supports the integrity of ownership. The ownership is implicitly enforced by the path structure `/users/{userId}/...`, making it nearly impossible to insert or modify documents in another user's path without compromising security. Timestamps and denormalized data can be easily enforced within security rules by validating the contents of the document on write operations."
+  }
+}
